@@ -45,7 +45,7 @@ export default {
 
     sendAPI(formtext){
     
-      this.axios.post('http://192.168.11.7:8888/direct?text=' + formtext, 
+      this.axios.post('http://localhost:8888/direct?text=' + formtext, 
               ).then(response => 
               
         this.renderChart(

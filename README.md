@@ -1,4 +1,4 @@
-# Tool memo
+# This tool is for visualizing directivity of text
 
 ## Project setup
 ```
