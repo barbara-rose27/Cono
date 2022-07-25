@@ -43,7 +43,7 @@ export default {
 
     sendAPI(formtext){
     
-      this.axios.post('http://163.221.132.90:8001/direct?text=' + formtext, 
+      this.axios.post('http://163.221.132.90:8001/direct/?text=' + formtext, 
               ).then(response => 
               
               
