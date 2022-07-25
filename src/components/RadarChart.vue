@@ -24,7 +24,6 @@ export default {
               pointBorderColor: "#fff",
               pointHoverBackgroundColor: "#fff",
               pointHoverBorderColor: "rgba(94,101,182,1)",
-              data: [15, 19, 10, 11, 16, 15]
             },
             {
               label: "女性",
@@ -34,7 +33,6 @@ export default {
               pointBorderColor: "#fff",
               pointHoverBackgroundColor: "#fff",
               pointHoverBorderColor: "rgba(255,99,132,1)",
-              data: [18, 18, 5, 19, 16, 17]
             }
           ]
         },
@@ -45,8 +43,9 @@ export default {
 
     sendAPI(formtext){
     
-      this.axios.post('http://localhost:8888/direct?text=' + formtext, 
+      this.axios.post('http://163.221.132.90:8001/direct?text=' + formtext, 
               ).then(response => 
+              
               
         this.renderChart(
           {
@@ -68,8 +67,8 @@ export default {
                 pointBorderColor: "#fff",
                 pointHoverBackgroundColor: "#fff",
                 pointHoverBorderColor: "rgba(94,101,182,1)",
-                data: [response.data.M10, response.data.M20, response.data.M30, 
-                       response.data.M40, response.data.M50, response.data.M60]
+                data: [response.data.M10[0], response.data.M20[0], response.data.M30[0], 
+                       response.data.M40[0], response.data.M50[0], response.data.M60[0]]
               },
               {
                 label: "女性",
@@ -79,8 +78,8 @@ export default {
                 pointBorderColor: "#fff",
                 pointHoverBackgroundColor: "#fff",
                 pointHoverBorderColor: "rgba(255,99,132,1)",
-                data: [response.data.F10, response.data.F20, response.data.F30, 
-                       response.data.F40, response.data.F50, response.data.F60]
+                data: [response.data.F10[0], response.data.F20[0], response.data.F30[0], 
+                       response.data.F40[0], response.data.F50[0], response.data.F60[0]]
               }
             ]
           },

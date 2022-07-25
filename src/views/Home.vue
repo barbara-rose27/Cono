@@ -10,12 +10,15 @@
         >
           <v-toolbar-title  class="font-weight-black">指向性判定</v-toolbar-title>
         </v-toolbar>
+        <v-form ref="whole_form">
      <v-textarea
             label="分析対象テキスト"
             outlined
             ref="form"
             v-model="TextAreaVal"
+             :rules="[required]"
           ></v-textarea>
+          </v-form>
     </div>
     <v-row
     justify="end"
@@ -54,7 +57,6 @@
         </v-toolbar>
     <RadarChart ref="rader_component"/>
     </div>
-    
   
   </div>
 </template>
@@ -72,17 +74,28 @@ export default {
   
   },
   data: function() {
+          
         
-          return{TextAreaVal: '初期値'}
+          return{TextAreaVal: '',
+          // 入力規則
+          required: value => !!value || "必ず入力してください", 
+          success: false,
+          
+          }
         
     
   },
   methods: {
 
       exec(){
+        if (this.$refs.whole_form.validate()) {
+         this.success = true;
          console.log(this.TextAreaVal)
          this.$refs.rader_component.sendAPI(this.TextAreaVal);
-
+      } else {
+        this.success = false;
+      }
+         
       },
     
       reset () {
