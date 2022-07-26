@@ -12,10 +12,7 @@ export default new Vuex.Store({
         text: 'Home',
         href: './',
       },
-      {
-        text: 'Tool',
-        href: './tool',
-      },
+      
     ],
   },
   getters: {
