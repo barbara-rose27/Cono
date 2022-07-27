@@ -20,27 +20,12 @@
           max-width="48"
           @click="$vuetify.goTo(0)"
         />
-
-        <v-btn
-          v-for="(link, i) in links"
-          :key="i"
-          v-bind="link"
-          class="hidden-sm-and-down"
-          text
-          @click="onClick($event, link)"
-        >
-          {{ link.text }}
-        </v-btn>
+          {{"NAIST Social Computing Lab"}}
+        
 
         <v-spacer />
 
-        <v-text-field
-          append-icon="mdi-magnify"
-          flat
-          hide-details
-          solo-inverted
-          style="max-width: 300px;"
-        />
+        
       </v-row>
     </v-container>
   </v-app-bar>

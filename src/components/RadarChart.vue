@@ -43,7 +43,7 @@ export default {
 
     sendAPI(formtext){
     
-      this.axios.post('https://163.221.132.90:8001/direct/?text=' + formtext, 
+      this.axios.post('https://aoi.naist.jp/transmission/transmit/?text=' + formtext, 
               ).then(response => 
               
               

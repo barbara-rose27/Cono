@@ -8,40 +8,70 @@
           height="40px"
           flat
         >
-          <v-toolbar-title  class="font-weight-black font-size=100">指向性判定</v-toolbar-title>
+          <v-toolbar-title  class="text-h3 font-weight-black">Voice2People</v-toolbar-title>
         </v-toolbar>
+             <v-toolbar
+          class="ma-2 ml-3"
+          color="white"
+          height="40px"
+          flat
+        >
+          <v-toolbar-title  class="text-h6 font-weight-black">Voice2People (V2P) は文章がどのような対象（年代・性別）向けであるか推定し，文章の指向性を可視化します          
+          </v-toolbar-title>
+        </v-toolbar>
+
+         </v-toolbar>
+             <v-toolbar
+          class="ml-1 mt-3"
+          color="white"
+          height="25px"
+          flat
+        >
+          <v-toolbar-title   class=" font-weight-black">サンプルテキスト          
+          </v-toolbar-title>
+        </v-toolbar>
+      
+  
          <v-row
-          class="ma-3">
-           <v-btn depressed color="blue darken-3" class= "mt-1 white--text" type="submit" @click="first_button" >
-            若年層男性向け
+          class="ma-1">
+          
+           <v-btn depressed color="blue darken-3" class= "mt-1 mb-2 white--text" type="submit" @click="first_button" >
+            1
           </v-btn>
           <v-btn depressed color="pink" class= "ml-3  mt-1 white--text"　type="submit" @click="second_button" >
-            若年層女性向け
+            2
           </v-btn>
           <v-btn depressed color="indigo darken-3" class= "ml-3  mt-1 white--text" type="submit" @click="third_button">
-            中年層男性向け
+            3
           </v-btn>
           <v-btn depressed color="pink darken-1" class= "ml-3  mt-1 white--text" type="submit" @click="fourth_button">
-            中年層女性向け
+           4
           </v-btn>
           <v-btn depressed color="deep-purple darken-3" class= "ml-3  mt-1 white--text" @click="fifth_button">
-            高年層男性向け
+            5
           </v-btn>
           <v-btn depressed color="pink accent-4" class= "ml-3 mt-1 white--text" @click="sixth_button">
-            高年層女性向け
+            6
           </v-btn>
            <v-btn depressed color="lime darken-3" class= "ml-3 mt-1 white--text"  @click="seventh_button">
-            ？向け
+            7
           </v-btn>　
            <v-btn depressed color="deep-orange darken-3" class= "ml-3  mt-1 white--text" type="submit" @click="eighth_button" >
-            ？向け
+            8
           </v-btn>　
            <v-btn depressed color="cyan darken-4" class= "ml-3  mt-1 white--text"　type="submit" @click="nineth_button">
-            ？向け
+            9
+          </v-btn>
+          <v-btn depressed color="blue-grey darken-1" class= "ml-3  mt-1 white--text"　type="submit" @click="tenth_button">
+            10
+          </v-btn>　
+          
+          
           </v-btn>　
            </v-row>
         <v-form ref="whole_form">
      <v-textarea
+          
             label="分析対象テキスト"
             outlined
             ref="form"
@@ -53,8 +83,7 @@
     <v-row
     justify="end"
     align="center"
-    class="ma-0.5"
-  >
+    class="ma-0.5">
     <v-btn 
     depresse 
     color="blue"
@@ -76,7 +105,7 @@
   </v-row>
     <div >
     <v-toolbar
-          class="ma-1, mt-3"
+          class="ma-2, mt-8"
           color="white"
           height="40px"
           flat>
@@ -85,7 +114,7 @@
         </v-toolbar>
     <RadarChart ref="rader_component"/>
     </div>
-  
+        <subscribe />  
   </div>
 </template>
 
@@ -95,10 +124,15 @@
 import RadarChart from "../components/RadarChart.vue";
 
 
+
+
 export default {
   name: "Tool",
   components: {
     RadarChart,
+    Social: () => import('@/components/home/Social'),
+    Subscribe: () => import('@/components/home/Subscribe'),
+  
   
   },
   data:function() {
@@ -116,16 +150,13 @@ export default {
       exec(){
         if (this.$refs.whole_form.validate()) {
          this.success = true;
-        
          this.$refs.rader_component.sendAPI(this.TextAreaVal);
       } else {
         this.success = false;
       }
          
       },
-    
       reset () {
-        
         this.$refs.form.reset()
       },
      first_button(){
@@ -145,8 +176,8 @@ export default {
       this.TextAreaVal = "お母さんへ　いつもありがとうございます。日頃の感謝をこめてお花を送ります。 気に入ってくれると嬉しいです。これからも宜しくお願いします。"
      },
      fifth_button(){
-      // 涙そうそうのお墓じまい
-      this.TextAreaVal = "お客様より『お寺でお墓を購入したものの、誰も入らなくなったので処分したい』というお問合せを頂きました。このような場合、寺院によって弊社が対応できるか否か変わってきます。今回のお客様は、お寺から『ご自身で業者を探してほしい』と言われたため、弊社へのご依頼という流れになりました。"
+      // 武将の名言
+      this.TextAreaVal = "忠ならんと欲すれば孝ならず、孝ならんと欲すれば忠ならず"
      },
      sixth_button(){
       // 瀬戸内寂聴
@@ -164,6 +195,11 @@ export default {
        // 松本人志
       this.TextAreaVal = "芸能人の巣ごもりでネタが無いのでしょう。ネットニュースは番組の感想文ばっかり。しかも変なキリトリだらけ…いやだ。いやだ。"
      },
+     tenth_button(){
+       // キング牧師
+      this.TextAreaVal = "もし飛べないなら走ればいい。走れないのなら歩けばいい。歩けないのであれば、這っていけばいい。何があっても前に進み続けなければならなのです"
+     },
+        
         
 
     
