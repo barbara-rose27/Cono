@@ -3,7 +3,7 @@
     <v-dialog
       v-model="dialog"
       persistent
-      max-width="290"
+    
     >
       <template v-slot:activator="{ on, attrs }">
         <v-btn

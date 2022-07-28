@@ -41,14 +41,6 @@
 
     data: () => ({
       items: [
-        {
-          href: 'https://twitter.com/sociocom_jp?s=20&t=YrAa4Tm0Vvf8lIN5A5p9MQ',
-          icon: 'mdi-twitter',
-        },
-        {
-          href: 'https://sociocom.naist.jp/index/',
-          icon: 'mdi-school',
-        },
         
       ],
     }),

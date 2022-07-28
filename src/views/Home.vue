@@ -6,17 +6,17 @@
           class="mb-1"
           color="white"
           height="40px"
-          flat
-        >
-          <v-toolbar-title  class="text-h3 font-weight-black">Voice2People</v-toolbar-title>
+          flat>
+
+          <v-toolbar-title  class="font-weight-black text-h4">Voice2People</v-toolbar-title>
         </v-toolbar>
              <v-toolbar
           class="ma-2 ml-3"
           color="white"
-          height="40px"
+          height="60px"
           flat
         >
-          <v-toolbar-title  class="text-h6 font-weight-black">Voice2People (V2P) は文章がどのような対象（年代・性別）向けであるか推定し，文章の指向性を可視化します          
+          <v-toolbar-title  class="font-weight-black ">Voice2People (V2P) は文章がどのような対象（年代・性別）向けであるか推定し，文章の指向性を可視化します          
           </v-toolbar-title>
         </v-toolbar>
 
@@ -27,25 +27,24 @@
           height="25px"
           flat
         >
-          <v-toolbar-title   class=" font-weight-black">サンプルテキスト          
+          <v-toolbar-title class=" font-weight-light" >サンプルテキスト          
           </v-toolbar-title>
         </v-toolbar>
-      
   
          <v-row
           class="ma-1">
           
-           <v-btn depressed color="blue darken-3" class= "mt-1 mb-2 white--text" type="submit" @click="first_button" >
+          <v-btn depressed color="blue darken-3" class= "mt-1 mb-2 white--text" type="submit" @click="first_button" >
             1
           </v-btn>
-          <v-btn depressed color="pink" class= "ml-3  mt-1 white--text"　type="submit" @click="second_button" >
+          <v-btn depressed color="pink" class= "ml-3  mt-1 white--text" type="submit" @click="second_button" >
             2
           </v-btn>
           <v-btn depressed color="indigo darken-3" class= "ml-3  mt-1 white--text" type="submit" @click="third_button">
             3
           </v-btn>
           <v-btn depressed color="pink darken-1" class= "ml-3  mt-1 white--text" type="submit" @click="fourth_button">
-           4
+            4
           </v-btn>
           <v-btn depressed color="deep-purple darken-3" class= "ml-3  mt-1 white--text" @click="fifth_button">
             5
@@ -55,19 +54,18 @@
           </v-btn>
            <v-btn depressed color="lime darken-3" class= "ml-3 mt-1 white--text"  @click="seventh_button">
             7
-          </v-btn>　
+          </v-btn>
            <v-btn depressed color="deep-orange darken-3" class= "ml-3  mt-1 white--text" type="submit" @click="eighth_button" >
             8
-          </v-btn>　
-           <v-btn depressed color="cyan darken-4" class= "ml-3  mt-1 white--text"　type="submit" @click="nineth_button">
+          </v-btn>
+           <v-btn depressed color="cyan darken-4" class= "ml-3  mt-1 white--text" type="submit" @click="nineth_button">
             9
           </v-btn>
-          <v-btn depressed color="blue-grey darken-1" class= "ml-3  mt-1 white--text"　type="submit" @click="tenth_button">
+          <v-btn depressed color="blue-grey darken-1" class= "ml-3  mt-1 white--text" type="submit" @click="tenth_button">
             10
-          </v-btn>　
+          </v-btn>
           
-          
-          </v-btn>　
+          </v-btn>
            </v-row>
         <v-form ref="whole_form">
      <v-textarea
@@ -103,9 +101,10 @@
     </v-btn>
    
   </v-row>
+
     <div >
     <v-toolbar
-          class="ma-2, mt-8"
+          class="ma-2"
           color="white"
           height="40px"
           flat>
@@ -113,6 +112,15 @@
            <v-toolbar-title  class="font-weight-black">分析結果</v-toolbar-title>
         </v-toolbar>
     <RadarChart ref="rader_component"/>
+
+    <v-toolbar
+          class="mb-1"
+          color="white"
+          height="300px"
+          flat>
+    </v-toolbar>
+
+    
     </div>
         <subscribe />  
   </div>
@@ -120,10 +128,7 @@
 
 <script>
 
-
 import RadarChart from "../components/RadarChart.vue";
-
-
 
 
 export default {
