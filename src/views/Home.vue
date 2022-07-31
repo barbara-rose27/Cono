@@ -2,21 +2,13 @@
   <div id="app" class="ma-10">
   <div>
      
-     <v-toolbar
-          class="mb-1"
+          <v-toolbar
+          class="ma-2"
           color="white"
-          height="40px"
-          flat>
-
-          <v-toolbar-title  class="font-weight-black text-h4">Voice2People</v-toolbar-title>
-        </v-toolbar>
-             <v-toolbar
-          class="ma-2 ml-3"
-          color="white"
-          height="60px"
+          height="30px"
           flat
         >
-          <v-toolbar-title  class="font-weight-black ">Voice2People (V2P) は文章がどのような対象（年代・性別）向けであるか推定し，文章の指向性を可視化します          
+          <v-toolbar-title  class=" text-title-1 font-weight-bold">Voice2People (V2P) は文章がどのような対象（年代・性別）向けであるか推定し，文章の指向性を可視化します          
           </v-toolbar-title>
         </v-toolbar>
 
@@ -27,7 +19,7 @@
           height="25px"
           flat
         >
-          <v-toolbar-title class=" font-weight-light" >サンプルテキスト          
+          <v-toolbar-title class="text-body-2 font-weight-light" >サンプルテキスト          
           </v-toolbar-title>
         </v-toolbar>
   
@@ -116,7 +108,7 @@
     <v-toolbar
           class="mb-1"
           color="white"
-          height="300px"
+          height="280px"
           flat>
     </v-toolbar>
 

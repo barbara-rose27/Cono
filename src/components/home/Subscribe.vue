@@ -19,7 +19,7 @@
             <v-list class="transparent">
               <v-list-item>
 
-                <v-list-item-title>こちらはNAIST 情報科学領域 ソーシャル・コンピューティング研究室の実証実験用サイトです．
+                <v-list-item-title>こちらはNAIST 情報科学領域 <a href="https://sociocom.naist.jp"  target="_blank">ソーシャル・コンピューティング研究室</a>が実施している「ことばの伝え方」に関する実証実験用サイトです．
                 </v-list-item-title>
               </v-list-item>
 

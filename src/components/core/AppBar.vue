@@ -20,7 +20,7 @@
           max-width="48"
           @click="$vuetify.goTo(0)"
         />
-          {{"NAIST Social Computing Lab"}}
+          <b>{{"Voice2People"}}</b>
         
 
         <v-spacer />
