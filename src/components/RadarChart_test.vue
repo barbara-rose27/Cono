@@ -7,17 +7,17 @@ export default {
     this.renderChart(
         {
           labels: [
-            "10s",
-            "20s",
-            "30s",
-            "40s",
-            "50s",
-            "60s",
+            "10代",
+            "20代",
+            "30代",
+            "40代",
+            "50代",
+            "60代",
           
           ],
           datasets: [
             {
-              label: "Male",
+              label: "男性",
               backgroundColor: "rgba(94,101,182,0.2)",
               borderColor: "rgba(94,101,182,1)",
               pointBackgroundColor: "rgba(94,101,182,1)",
@@ -26,7 +26,7 @@ export default {
               pointHoverBorderColor: "rgba(94,101,182,1)",
             },
             {
-              label: "Female",
+              label: "女性",
               backgroundColor: "rgba(255,99,132,0.2)",
               borderColor: "rgba(255,99,132,1)",
               pointBackgroundColor: "rgba(255,99,132,1)",
@@ -42,10 +42,6 @@ export default {
   methods: {
 
     sendAPI(formtext){
-    
-      this.axios.post('https://aoi.naist.jp/transmission/transmit/?text=' + formtext, 
-              ).then(response => 
-              
               
         this.renderChart(
           {
@@ -67,9 +63,7 @@ export default {
                 pointBorderColor: "#fff",
                 pointHoverBackgroundColor: "#fff",
                 pointHoverBorderColor: "rgba(94,101,182,1)",
-                data: [response.data.M10[0], response.data.M20[0], response.data.M30[0], 
-                      response.data.M40[0], response.data.M50[0], response.data.M60[0]]
-               
+                data: [10, 3, 0, 0, 0, 0]
 
               },
               {
@@ -80,17 +74,13 @@ export default {
                 pointBorderColor: "#fff",
                 pointHoverBackgroundColor: "#fff",
                 pointHoverBorderColor: "rgba(255,99,132,1)",
-                data: [response.data.F10[0], response.data.F20[0], response.data.F30[0], 
-                       response.data.F40[0], response.data.F50[0], response.data.F60[0]]
+                data: [5, 1, 0, 0, 0, 0]
               }
             ]
           },
           { responsive: true, maintainAspectRatio: false }
         )
-      
-      )
-                .catch(error => console.log(error))
-      }
+    }
       }
               
   };
