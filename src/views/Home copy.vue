@@ -3,19 +3,13 @@
   <div>
      
           <v-toolbar
-          class="mb-3"
+          class="ma-2"
           color="white"
-          height="40px"
+          height="30px"
           flat
         >
-          <v-toolbar-title class=" text-title-1  ">Cono helps find words that carry emotion meaning in text, and also provides predictions of emotion for synonyms.<br>
-          <font color=grey lighten-1>Click on these numbered buttons to try example sentences, or enter your own text:</font>
-          
+          <v-toolbar-title  class=" text-title-1 font-weight-bold">Cono!! helps to find emotional words in text     
           </v-toolbar-title>
-
-         
- 
-
           
         </v-toolbar>
 
@@ -25,22 +19,22 @@
          <v-row
           class="ma-1">
           
-          <v-btn depressed color="lime darken-2" class= "mt-1 mb-2 white--text" type="submit" @click="first_button" >
+          <v-btn depressed color="blue darken-3" class= "mt-1 mb-2 white--text" type="submit" @click="first_button" >
             1
           </v-btn>
-          <v-btn depressed color="pink lighten-1" class= "ml-3  mt-1 white--text" type="submit" @click="second_button" >
+          <v-btn depressed color="pink" class= "ml-3  mt-1 white--text" type="submit" @click="second_button" >
             2
           </v-btn>
-          <v-btn depressed color="cyan darken-2" class= "ml-3  mt-1 white--text" type="submit" @click="third_button">
+          <v-btn depressed color="indigo darken-3" class= "ml-3  mt-1 white--text" type="submit" @click="third_button">
             3
           </v-btn>
-          <v-btn depressed color="deep-orange lighten-1" class= "ml-3  mt-1 white--text" type="submit" @click="fourth_button">
+          <v-btn depressed color="pink darken-1" class= "ml-3  mt-1 white--text" type="submit" @click="fourth_button">
             4
           </v-btn>
-          <v-btn depressed color="pink darken-2" class= "ml-3  mt-1 white--text" @click="fifth_button">
+          <v-btn depressed color="deep-purple darken-3" class= "ml-3  mt-1 white--text" @click="fifth_button">
             5
           </v-btn>
-          <v-btn depressed color="orange lighten-1" class= "ml-3 mt-1 white--text" @click="sixth_button">
+          <v-btn depressed color="pink accent-4" class= "ml-3 mt-1 white--text" @click="sixth_button">
             6
           </v-btn>
            <v-btn depressed color="lime darken-3" class= "ml-3 mt-1 white--text"  @click="seventh_button">
@@ -52,7 +46,7 @@
            <v-btn depressed color="cyan darken-4" class= "ml-3  mt-1 white--text" type="submit" @click="nineth_button">
             9
           </v-btn>
-          <v-btn depressed color="orange darken-2" class= "ml-3  mt-1 white--text" type="submit" @click="tenth_button">
+          <v-btn depressed color="blue-grey darken-1" class= "ml-3  mt-1 white--text" type="submit" @click="tenth_button">
             10
           </v-btn>
           
@@ -75,7 +69,7 @@
     class="ma-0.5">
     <v-btn 
     depresse 
-    color="green"
+    color="blue"
     class="ma-1 mr-3 white--text text--lighten-1"
     type="submit" @click="exec"
     >
@@ -97,16 +91,16 @@
     <v-toolbar
           class="ma-2"
           color="white"
-          height="20px"
+          height="40px"
           flat>
     
-           <v-toolbar-title  id="div_textarea2" class="font-weight-black">Analysis Result<br><font class="font-weight-thin"> Click on the highlighted words to learn more </font></v-toolbar-title>
+           <v-toolbar-title  id="div_textarea2" class="font-weight-black">Analysis Result</v-toolbar-title>
         </v-toolbar>
 
     <v-banner two-line>
     <v-avatar
       slot="icon"
-      color="orange"
+      color="deep-purple accent-4"
       size="40">
       <v-icon
         color="white">
@@ -114,18 +108,23 @@
       </v-icon>
     </v-avatar>
     <div v-html="input_sentence" @click="handleLineClick" ></div>
-<v-row justify="end">
-
-
-</v-row>
 
 
 
+    <template v-slot:actions>
+      <v-btn
+        text
+        color="deep-purple accent-4"
+      >
+        Action
+      </v-btn>
+  
+    </template>
   </v-banner>
     <v-toolbar
           class="ma-1, mt-3"
           color="white"
-          height="20px"
+          height="80px"
           flat>
   
         </v-toolbar>
@@ -133,62 +132,13 @@
    <card ref="card_component"/>
 
    
-      <v-dialog
-      v-model="dialog"
-      width="500"
-    >
-      <template v-slot:activator="{ on, attrs }">
-        <v-btn
-          text   
-          color="orange"
-          dark
-          v-bind="attrs"
-          v-on="on"
-        >
-          Legend
-        </v-btn>
-      </template>
 
-      <v-card>
-        <v-card-title class="text-h5 orange lighten-2">
-          Legend
-        </v-card-title>
-
-        <v-card-text class="text-h5"> 
-          <p> </p>
-          <p>Positive 🙂 </p>
-          <p>Negative 😔 </p>
-          <p>Anger 😡 </p>
-          <p>Disgust 🤢 </p>
-          <p>Fear 😨 </p>
-          <p>Joy 😊 </p>
-          <p>Sadness 😢 </p>
-          <p>Surprise 😲 </p>
-          <p>Neutral 😶 </p>
-        </v-card-text>
-
-        <v-divider></v-divider>
-
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn
-            color="primary"
-            text
-            @click="dialog = false"
-          >
-            Exit
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
 
     
     </div>
       
   </div>
-  
 </template>
-
 
 <script>
 
@@ -212,8 +162,7 @@ export default {
       input_sentence: '',
       // 入力規則
       required: value => !!value || "Please input text", 
-      success: false,
-      dialog: false,}
+      success: false,}
           
     
   },
@@ -221,17 +170,15 @@ export default {
   
 
   methods: {
-    handleLineClick(e) {
+      handleLineClick(e) {
     let clickedElId = e.target.id
     if (clickedElId.match('word')) {
       
     
-      //alert(e)
+     // alert(e)
       //console.log(e)
-      // console.log(e.path[0].innerHTML)
-      //let text = e.path[0].innerHTML
-      let text = e.target.innerHTML
-      //console.log(text)
+     // console.log(e.path[0].innerHTML)
+      let text = e.path[0].innerHTML
 
       this.$refs.card_component.sendAPI(text);
 
@@ -251,7 +198,7 @@ export default {
         
          let dic_words = text_data[1]
          let new_input = input_text
-         console.log(dic_words)
+         //console.log(dic_words)
 
          for (var key in dic_words) {
             //console.log(key + ': ' + dic_words[key])
@@ -281,15 +228,15 @@ export default {
       },
      first_button(){
     
-      this.TextAreaVal = "What a marvelous day!"
+      this.TextAreaVal = "What a marvelous day! If only it were not raining like hell."
      },
      second_button(){
    
-      this.TextAreaVal = "Margaret is very slender and pretty, but Agnes is lanky and frail. Both girls are thin."
+      this.TextAreaVal = "Thanks for helping, even though it ended in failure, I learned a lot."
      },
      third_button(){
    
-      this.TextAreaVal = "Oh shit! Cool tricks, man."
+      this.TextAreaVal = "Oh shit! Cool tricks man."
      },
      fourth_button(){
      
@@ -297,11 +244,11 @@ export default {
      },
      fifth_button(){
     
-      this.TextAreaVal = "Merry Christmas! Enjoy the holidays."
+      this.TextAreaVal = "Merry Merry Christmas! Enjoy the holidays."
      },
      sixth_button(){
    
-      this.TextAreaVal = "The project is in shambles, this is a disaster."
+      this.TextAreaVal = "The project is in shambles, there is no way we can persevere through these challenges."
      },
      seventh_button(){
        
@@ -309,15 +256,15 @@ export default {
      },
      eighth_button(){
       
-      this.TextAreaVal = "He told her that her perfume's scent was a terrible odor."
+      this.TextAreaVal = "Fire!Thunder!Freeze!"
      },
      nineth_button(){
     
-      this.TextAreaVal = "What started as a shower of rain turned into a torrent. Finally, the storm turned into a drizzle."
+      this.TextAreaVal = "No! Way!"
      },
      tenth_button(){
      
-      this.TextAreaVal = "She was extremely disappointed when she saw her test results."
+      this.TextAreaVal = "MAYBE!"
      },
         
         

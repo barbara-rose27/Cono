@@ -2,6 +2,7 @@
   <v-app-bar
     app
     flat
+    color="white"
     
   >
     <v-app-bar-nav-icon
@@ -9,21 +10,20 @@
       @click="toggleDrawer"
     />
 
-    <v-container class="mx-auto py-0">
+    <v-container class="mx-n1 py-4">
       <v-row align="center">
-        <!-- <v-img
-          :src="require('@/assets/logo.png')"
+        <v-img
+          :src="require('@/assets/Cono.png')"
           class="mr-5"
           contain
-          height="48"
-          width="48"
-          max-width="48"
+          height="80"
+          width="30"
+          max-width="310"
           @click="$vuetify.goTo(0)"
         /> 
-        -->
-          <b>{{"Voice2People"}}</b>
-        
-
+      
+          <b>{{"A Word Emotion Analysis Tool"}}</b>
+      
         <v-spacer />
 
         
