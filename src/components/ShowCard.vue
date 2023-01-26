@@ -80,8 +80,8 @@
 
         // 非同期側
         async apiSubmit(formtext) {
-            return await this.axios.post('http://cono.pythonanywhere.com/emotion_checker/?text=' + formtext,)
-            //return await this.axios.post('https://localhost:5000/emotion_checker/?text=' + formtext,)
+            return await this.axios.post('https://cono.pythonanywhere.com/emotion_checker/?text=' + formtext,)
+            //return await this.axios.post('http://localhost:5000/emotion_checker/?text=' + formtext,)
     .then(response => {
       // 成功時の処理etc
       console.log(response.data)
